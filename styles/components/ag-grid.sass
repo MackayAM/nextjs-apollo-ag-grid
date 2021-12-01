@@ -1,0 +1,106 @@
+@import "~ag-grid-community/src/styles/ag-grid"
+@import "~ag-grid-community/src/styles/ag-theme-balham-dark/sass/ag-theme-balham-dark-mixin"
+@import 'mixins/scrollbar'
+
+.table-container
+    width: 100%
+    max-height: 70vh
+    margin: 0
+    padding: 0
+
+.ag-theme-balham-dark
+    font-size: 0.875rem !important
+    // Overwrite AG Grid theme variables
+    --ag-header-background-color: var(--color-table-header-background)
+    --ag-even-row-background-color: var(--color-table-even-row-background)
+    --ag-even-row-hover-background-color: var(--color-table-even-row-hover-background)
+    --ag-odd-row-background-color: var(--color-table-odd-row-background)
+    --ag-odd-row-hover-background-color: var(--color-table-odd-row-hover-background)
+    --ag-background-color: var(--color-table-background)
+    --ag-foreground-color: var(--color-table-body-text)
+    --ag-header-foreground-color: var(--color-table-header-text)
+    --ag-selected-row-background-color: var(--color-table-selected-row-background)
+    --ag-border-color: var(--color-table-border-color)
+
+    +ag-theme-balham-dark
+
+    .ag-horizontal-right-spacer
+        background: var(--color-scrollbar-track)
+        width: 8px !important
+        min-width: 8px !important
+        max-width: 8px !important
+
+    .ag-root-wrapper
+        border: none
+        border-bottom: solid 1px #3b4a78
+        background: transparent !important
+
+    .ag-header
+        border-bottom: solid 1px #2b395a
+        background: #1A1F33
+
+    .ag-cell-focus,.ag-cell-no-focusm, .ag-cell-range-handle, .ag-cell-range-single-cell
+        border: none !important
+
+    .no-border.ag-cell:focus
+        border: none !important
+        outline: none
+
+    .ag-row
+        border-bottom: solid 1px #2b395a
+        font-size: 0.875rem
+
+        &.ag-row-even
+            background-color: #1E253B !important
+            &.ag-row-hover
+                background-color: #2A3655 !important
+
+        &.ag-row-odd
+            background: #1A1F33 !important
+            &.ag-row-hover
+                background-color: #2A3655 !important
+
+        .ag-cell
+            line-height: 40px
+
+        .ag-group-expanded,
+        .ag-group-contracted
+            height: 40px !important
+            line-height: 40px !important
+
+    .ag-side-buttons
+        background: #1a1f33
+
+        .ag-side-button-button
+            background: #3b4a78
+            border-radius: 4px
+            border-top: none
+            border-bottom: none
+            margin-bottom: .75rem
+
+    .ag-ltr
+        .ag-side-bar-right
+            border: solid 1px #3b4a78
+            border-bottom: none
+
+    .ag-status-bar
+        display: none
+
+    .ag-center-cols-viewport
+        overflow-x: hidden
+
+    .ag-body-viewport
+        max-height: 70vh
+        overflow: hidden
+        overflow-y: scroll
+        +scrollbar(10px, var(--color-scrollbar-thumb), var(--color-scrollbar-track), var(--color-scrollbar-thumb-hover))
+
+    .ag-body-horizontal-scroll-viewport, .ag-body-viewport
+        +scrollbar(10px, var(--color-scrollbar-thumb), var(--color-scrollbar-track), var(--color-scrollbar-thumb-hover))
+
+    .ag-root-wrapper, .ag-root-wrapper-body
+        max-height: 70vh
+
+.ag-floating-filter-input input
+    background-color: var(--color-background) !important
+    border-color: rgba(66, 66, 66, 0.5) !important

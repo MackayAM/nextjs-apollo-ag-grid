@@ -1,0 +1,106 @@
+@import '~bootstrap/dist/css/bootstrap.min.css'
+
+@import 'components/ag-grid'
+@import 'components/loader'
+@import 'components/card'
+
+@import 'mixins/scrollbar'
+@import 'fonts'
+
+html, body, #__next, .app
+  height: 100%
+
+body
+  background-color: var(--color-primary)
+  color: var(--color-body-text)
+  overflow: hidden
+  max-height: 100vh
+  font-size: var(--body-font-size)
+  *
+    font-family: Roboto, Calibri, Helvetica
+
+.float-center
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  position: absolute
+
+.float-bottom-right
+  position: fixed
+  bottom: 1rem
+  right: 1rem
+
+.page-container
+  background: rgba(0,0,0,0.30)
+  height: 100%
+  overflow: hidden
+  overflow-y: auto
+  position: relative
+  +scrollbar(10px, var(--color-scrollbar-thumb), var(--color-scrollbar-track), var(--color-scrollbar-thumb-hover))
+
+.MuiTextField-root
+  width: 100%
+  margin-bottom: 0.5rem !important
+  outline: 1px solid #232740
+  .MuiInputBase-input
+    background: #1A1F33 !important
+    border-color: #3B4A78
+    color: var(--color-body-text) !important
+  .MuiFormLabel-root
+    color: #999999
+
+.page-background
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: bottom
+
+.MuiTextField-root
+  outline: none
+
+.gradient-border
+  height: 4px
+  width: 100%
+  top: -0.1rem
+  left: 0
+  margin-left: -.1rem
+  width: calc(100% + .2rem)
+  position: absolute
+
+  &--blue
+    background-image: linear-gradient(to left, #21284D, #41509A)
+
+  &--light-blue
+    background-image: linear-gradient(to left, #33c0e4, #5852f4)
+
+  &--blue-red
+    background-image: linear-gradient(to right, #5ea2f6,#d5386b)
+
+  &--green-red
+    background-image: linear-gradient(to right, #20BCCB,#F74C6B)
+
+  &--red-blue
+    background-image: linear-gradient(to right, #992e57,#5082bf)
+
+  &--yellow-green
+    background-image: linear-gradient(to right, #FCCA16,#21D05E)
+
+  &--red
+    background-image: linear-gradient(to right, #e00a73, #d0760e)
+
+  &--emerald
+    background-image: linear-gradient(to right, #0e6490,#01dfee)
+
+  &--purple
+    background-image: linear-gradient(to right, #3525e3,#9832d8)
+
+  &--blue-purple
+    background-image: linear-gradient(to right, #5090FF,#C437D2)
+
+  &--green
+    background-image: linear-gradient(to right, #5aea9e,#afe217)
+
+  &--yellow
+    background-image: linear-gradient(to right, #fff36a,#fe716b)
+
+  &--orange
+    background-image: linear-gradient(to right, #f2986a,#d2794d)

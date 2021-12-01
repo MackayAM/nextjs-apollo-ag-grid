@@ -1,0 +1,21 @@
+.bar
+    width: 10px
+    height: 70px
+    background: transparent
+    display: inline-block
+    transform-origin: bottom center
+    border-top-right-radius: 20px
+    border-top-left-radius: 20px
+    animation: loader 1.2s linear infinite
+    margin-right: 3px
+
+@keyframes loader
+    0%
+        transform: scaleY(0.1)
+        background: transparent
+    50%
+        transform: scaleY(1)
+        background: cyan
+    100%
+        transform: scaleY(0.1)
+        background: transparent
